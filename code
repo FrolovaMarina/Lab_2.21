@@ -30,7 +30,7 @@ try:
         det = int(np.linalg.det(A))
         res = det / math.factorial(2*n)
     res = round(res, t)
-    print(res)
+    print("res =", res)
     finish = time.time()
     result = finish - start
     print("Время выполнения программы: " + str(result) + " секунд.")
