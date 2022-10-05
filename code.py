@@ -24,13 +24,21 @@ try:
         N = randint(1, 100)
         A = np.random.randint(-10, 10, (N, N))
         rank = np.linalg.matrix_rank(A)
+    print("A = ")
+    print(A)
     start = time.time()
-    for n in range(1, 5):
-        A = 2 * A * math.factorial(n)
-        det = int(np.linalg.det(A))
-        res = det / math.factorial(2*n)
+    x = A.view()
+    res = 0
+    for n in range(1, count + 1):
+        x = 2 * A * math.factorial(n)
+        print("x = ")
+        print(x)
+        det = int(np.linalg.det(x))
+        res = det / math.factorial(2*n) + res
+        res = round(res, t)
+        print("res =", res)
     res = round(res, t)
-    print("res =", res)
+    print("Результат работы программы =", res)
     finish = time.time()
     result = finish - start
     print("Время выполнения программы: " + str(result) + " секунд.")
